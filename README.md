@@ -2,5 +2,6 @@
 aproaches and tools how to organize automated code refaftoring with ai (mll of course)
 
 
-<img width="749" alt="Screenshot 2024-01-02 at 15 14 11" src="https://github.com/williamqo/ai-refator/assets/155407754/689f62be-97c2-4701-ba05-838b1d51f10a">
+
+<img width="737" alt="Screenshot 2024-01-02 at 16 28 14" src="https://github.com/williamqo/ai-refator/assets/155407754/9d35c0dc-8793-42d3-b760-28c9aa696344">
 

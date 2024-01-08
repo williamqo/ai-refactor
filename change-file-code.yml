@@ -1,7 +1,8 @@
-name: Update File Content
+name: Update gihub File code
 on:
   ## it's a draft version
   ## made is with gpt. chat history: https://chat.openai.com/share/00648055-2806-478b-9d0d-6d1f02f56162
+  ## previos version chat https://chat.openai.com/share/c9f476d4-dd4c-4ba6-a033-0c47f768f590
   
   workflow_dispatch:
     inputs:

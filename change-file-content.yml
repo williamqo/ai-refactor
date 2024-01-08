@@ -1,0 +1,44 @@
+name: Update File Content
+on:
+  ## it's a draft version
+  ## made is with gpt. chat history: https://chat.openai.com/share/00648055-2806-478b-9d0d-6d1f02f56162
+  
+  workflow_dispatch:
+    inputs:
+      fileUrl:
+        description: 'URL of the new file content'
+        required: true
+      branchName:
+        description: 'Branch to update'
+        required: true
+
+jobs:
+  update-file:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      # Add other setup steps here
+
+      - name: Fetch New File Content
+        run: |
+          curl -o mrt_opportunities.sql "${{ github.event.inputs.fileUrl }}"
+
+      - name: Update file
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "Adding new content" >> file.txt
+
+      - name: Commit and push if it's necessary
+        run: |
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
+          git add .
+          git diff-index --quiet HEAD || git commit -m "Update file.txt"
+          git push
+
+
+
+      # Add any additional steps if needed

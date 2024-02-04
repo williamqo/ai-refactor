@@ -16,7 +16,7 @@ CONFIG = {
         FROM system.tables
     """,
     "initial_order_by_and_limit": 'ORDER BY rand() LIMIT 4000',
-    "maximum_columns": 300,
+    "maximum_columns": 900,
     "minimum_rows_to_insert": 100,
     "logfile_name": 'logfile.txt'
 }
@@ -101,7 +101,7 @@ def insert_dataset(relation_name, schema_name, table_name, column_names, ch_clie
 
 # Build the query to retrieve content for insertion
 def build_content_query(relation_name, schema_name, table_name, column_names):
-    column_selection = ' , '.join([f"'{col}', assumeNotNull(toString({col}))" for col in column_names])
+    column_selection = ' , '.join([f"'{column}', assumeNotNull(toString({column}))" for col in column_names])
     return f"""
         SELECT
             '{schema_name}' AS schema_name,

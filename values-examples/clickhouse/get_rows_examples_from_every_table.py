@@ -101,7 +101,7 @@ def insert_dataset(relation_name, schema_name, table_name, column_names, ch_clie
 
 # Build the query to retrieve content for insertion
 def build_content_query(relation_name, schema_name, table_name, column_names):
-    column_selection = ' , '.join([f"'{column}', assumeNotNull(toString({col}))" for col in column_names])
+    column_selection = ' , '.join([f"'{column}', assumeNotNull(toString({column}))" for column in column_names])
     return f"""
         SELECT
             '{schema_name}' AS schema_name,
